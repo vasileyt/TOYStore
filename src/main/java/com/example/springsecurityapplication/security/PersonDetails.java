@@ -16,21 +16,23 @@ public class PersonDetails implements UserDetails {
         this.person = person;
     }
 
+    // Метод по получанию объект пользователя
     public Person getPerson(){
         return this.person;
     }
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
+    public Collection<? extends GrantedAuthority> getAuthorities() { // возвращает лист из одного элемента
         return Collections.singletonList(new SimpleGrantedAuthority(person.getRole()));
     }
 
 
-
+    //  Позволяет получить пароль пользователя
     @Override
     public String getPassword() {
         return this.person.getPassword();
     }
 
+    // Позволяет получить логин пользователя
     @Override
     public String getUsername() {
         return this.person.getLogin();

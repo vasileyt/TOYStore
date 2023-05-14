@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактировать пользователя</title>
+</head>
+<body>
+<h3>Список пользователей</h3>
+<div th:each="person: ${person}">
+    <br>
+    <form th:method="POST" th:action="@{/admin/person/edit/{id}(id=${person.getId()})}" th:object="${person}"
+          enctype="multipart/form-data">
+        <select th:field="*{role}">
+            <option value="ROLE_USER">Пользователь</option>
+            <option value="ROLE_ADMIN">Админ</option>
+        </select>
+        <input type="submit" value="Редактировать">
+    </form>
+</div>
+</body>
+</html>

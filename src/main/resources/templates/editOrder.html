@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактировать заказ</title>
+</head>
+<body>
+<h3>Список заказов</h3>
+<div th:each="order: ${order}">
+    <br>
+    <form th:method="POST" th:action="@{/admin/order/edit/{id}(id=${order.getId()})}" th:object="${order}"
+          enctype="multipart/form-data">
+        <select th:field="*{status}">
+            <option value="Принят">Принят</option>
+            <option value="Оформлен">Оформлен</option>
+            <option value="Ожидает">Ожидает</option>
+            <option value="Получен">Получен</option>
+        </select>
+        <input type="submit" value="Редактировать">
+    </form>
+</div>
+</body>
+</html>
