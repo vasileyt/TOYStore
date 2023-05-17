@@ -9,11 +9,11 @@ const CardItem = (props) => {
     try{
       const findOverlay = props.overlayItems.find(objOver=> objOver.myId === obj.myId)
       if(findOverlay){
-        axios.delete(`https://637f91ca2f8f56e28e904e7d.mockapi.io/cart/${findOverlay.id}`)
+        axios.delete(`https://641c3cd1b556e431a8692d1a.mockapi.io/cart/${findOverlay.id}`)
         props.setOverlayItems((over) => over.filter(o=>o.myId !== obj.myId))
       }
       else{
-        const {data} = await axios.post('https://637f91ca2f8f56e28e904e7d.mockapi.io/cart', obj)
+        const {data} = await axios.post('https://641c3cd1b556e431a8692d1a.mockapi.io/cart', obj)
         props.setOverlayItems([...props.overlayItems, data])
       }
     }
@@ -26,11 +26,11 @@ const CardItem = (props) => {
     try{
       const findFavorites = props.favorites.find(objFav=> objFav.myId === obj.myId)
       if(findFavorites){
-        axios.delete(`https://637f91ca2f8f56e28e904e7d.mockapi.io/favorites/${findFavorites.id}`)
+        axios.delete(`https://641c3cd1b556e431a8692d1a.mockapi.io/favorites/${findFavorites.id}`)
         props.setFavorites((over) => over.filter(o=>o.myId !== obj.myId))
       }
       else{
-        const {data} = await axios.post('https://637f91ca2f8f56e28e904e7d.mockapi.io/favorites', obj)
+        const {data} = await axios.post('https://641c3cd1b556e431a8692d1a.mockapi.io/favorites', obj)
         props.setFavorites([...props.favorites, data])
       }
     }
