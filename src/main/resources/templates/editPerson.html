@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+<link href="../static/css/index.css" th:href="@{/css/index.css}" rel="stylesheet" />
+<link href="../static/css/select.css" th:href="@{/css/select.css}" rel="stylesheet" />
+<link href="../static/css/button.css" th:href="@{/css/button.css}" rel="stylesheet" />
+
 <head>
     <meta charset="UTF-8">
     <title>Редактировать пользователя</title>
 </head>
 <body>
-<h3>Список пользователей</h3>
+<div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+</div>
+<h3 class="h3">Редактирование роли пользователя</h3>
 <div th:each="person: ${person}">
     <br>
+    <div class="box">
     <form th:method="POST" th:action="@{/admin/person/edit/{id}(id=${person.getId()})}" th:object="${person}"
           enctype="multipart/form-data">
         <select th:field="*{role}">
             <option value="ROLE_USER">Пользователь</option>
             <option value="ROLE_ADMIN">Админ</option>
         </select>
-        <input type="submit" value="Редактировать">
+    </div>
+    <br>
+        <input type="submit" class="gradient-button5"  value="Редактировать">
     </form>
+
 </div>
 </body>
 </html>

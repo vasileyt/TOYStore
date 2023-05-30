@@ -1,0 +1,79 @@
+fieldset{
+    border:5px #1E90FF solid;
+    border-radius: 10px;
+    margin: 10px;
+    padding:0 15px;
+}
+
+legend {
+    background-color: #1E90FF;
+    color: #fff;
+    padding: 10px 10px;
+    margin: 20px 0 0 10px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.text{
+
+}
+.type {
+    width:200px;
+    margin:10px 0;
+    height:30px;
+    border-radius:10px;
+    border: 1px solid #eee;
+    transition: .3s border-color;
+    outline:none;
+}
+.type:hover {
+    border: 1px solid #97CAD0;
+    outline:none;
+}
+label{
+
+}
+
+.form_toggle {
+    display: inline-block;
+    overflow: hidden;
+}
+.form_toggle-item {
+    float: left;
+    display: inline-block;
+}
+.form_toggle-item input[type=radio] {
+    display: none;
+}
+.form_toggle-item label {
+    display: inline-block;
+    padding: 0 15px;
+    margin: 10px 0;
+    line-height: 34px;
+    border: 1px solid #999;
+    border-right: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.form_toggle .item-1 label {
+    border-radius: 6px 0 0 6px;
+}
+.form_toggle .item-2 label {
+    border-radius: 0 6px 6px 0;
+    border-right: 1px solid #999;
+}
+.form_toggle .item-3 label {
+    border-radius: 0;
+}
+/* Checked */
+.form_toggle .item-1 input[type=radio]:checked + label {
+    background: #78DBE2;
+}
+.form_toggle .item-2 input[type=radio]:checked + label {
+    background: #78DBE2;
+}
+.form_toggle .item-3 input[type=radio]:checked + label {
+    background: #78DBE2;
+}

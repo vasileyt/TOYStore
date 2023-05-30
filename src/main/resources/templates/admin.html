@@ -1,34 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+<link href="../static/css/index.css" th:href="@{/css/index.css}" rel="stylesheet" />
+<link href="../static/css/button.css" th:href="@{/css/button.css}" rel="stylesheet" />
+<link href="../static/css/menu.css" th:href="@{/css/menu.css}" rel="stylesheet" />
+<link href="../static/css/table.css" th:href="@{/css/table.css}" rel="stylesheet" />
+
 <head>
     <meta charset="UTF-8">
     <title>Личный кабинет администратора</title>
 </head>
 <body>
-<h1>Личный кабинет администратора</h1>
-<form method="post" action="/logout">
-    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
-    <button type="submit">Выйти из личного кабинета</button>
+<div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+</div>
 
-</form>
-<br>
-<a href="admin/orders">Список заказов</a>
-<br>
-<a href="admin/person">Список пользователей</a>
-<br>
-<a href="admin/product/add">Добавить товар</a>
-<br>
+<h1>.</h1>
+<h1>.</h1>
+
+
+<nav role='navigation'>
+    <ul>
+        <li><a>Личный кабинет администратора</a>
+            <ul>
+                <li><a href="admin/orders" >Список заказов</a></li>
+                <li><a href="admin/person" >Список пользователей</a></li>
+                <li><a href="admin/product/add" >Добавить товар</a></li>
+                <li> <form method="post" action="/logout">
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                    <button type="submit" class="gradient-button1" >Выйти из личного кабинета</button></form> </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+
 <div th:each="product : ${products}">
-    <p th:text="'Наименование: ' + ${product.getTitle()}"></p>
-    <p th:text="'Описание: ' + ${product.getDescription()}"></p>
-    <p th:text="'Цена: ' + ${product.getPrice()}"></p>
-    <p th:text="'Склад: ' + ${product.getWarehouse()}"></p>
-    <p th:text="'Продавец: ' + ${product.getSeller()}"></p>
-    <p th:text="'Категория: ' + ${product.getCategory().getName()}"></p>
-    <a th:href="@{/admin/product/edit/{id}(id=${product.getId()})}">Редактировать товар</a>
-    <a th:href="@{/admin/product/delete/{id}(id=${product.getId()})}">Удалить товар</a>
-    <hr style="color : midnightblue">
+    <table>
+        <tr>
+            <td>Наименование</td>
+            <td><p th:text="${product.getTitle()}"></p></td>
+        </tr>
+        <tr>
+            <td>Описание</td>
+            <td><p th:text="${product.getDescription()}"></p></td>
+        </tr>
+        <tr>
+            <td>Цена</td>
+            <td><p th:text="${product.getPrice()}"></p></td>
+        </tr>
+        <tr>
+            <td>Склад</td>
+            <td><p th:text="${product.getWarehouse()}"></p></td>
+        </tr>
+        <tr>
+            <td>Продавец</td>
+            <td><p th:text="${product.getSeller()}"></p></td>
+        </tr>
+        <tr>
+            <td>Категория</td>
+            <td><p th:text="${product.getCategory().getName()}"></p></td>
+        </tr>
+    </table>
+    <a th:href="@{/admin/product/edit/{id}(id=${product.getId()})}" class="gradient-button2">Редактировать товар</a>
+    <a th:href="@{/admin/product/delete/{id}(id=${product.getId()})}"
+    class="gradient-button2">Удалить товар</a>
+    <br>
+    <br>
     <hr>
+
 </div>
 </body>
 </html>

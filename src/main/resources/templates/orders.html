@@ -1,28 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+<link href="../static/css/index.css" th:href="@{/css/index.css}" rel="stylesheet" />
+<link href="../static/css/button.css" th:href="@{/css/button.css}" rel="stylesheet"/>
+<link href="../static/css/addform.css" th:href="@{/css/addform.css}" rel="stylesheet"/>
+<link href="../static/css/table.css" th:href="@{/css/table.css}" rel="stylesheet" />
+
 <head>
     <meta charset="UTF-8">
     <title>Заказы</title>
 </head>
 <body>
 <h3>Список заказов</h3>
-<a href="/admin">Назад в личный кабинет</a>
-<form th:method="GET" th:action="@{/admin/order/number/end}">
+<a href="/admin" class="gradient-button3">Назад</a>
+<form th:method="GET"  th:action="@{/admin/order/number/end}">
     <p>Поиск по последним 4 символам</p>
-    <input minlength="4" maxlength="4" th:type="text" name="endWith" id="endWith" th:value="*{value_end_with}">
-    <input type="submit" value="Поиск">
+    <input minlength="4" maxlength="4" th:type="text" name="endWith" id="endWith" class="type" th:value="*{value_end_with}">
+    <input type="submit" class="gradient-button2" value="Поиск">
 </form>
+
 <div th:each="order : ${orders}">
-    <br>
     <h3 th:text="'Заказ №' + ${order.getNumber()}"></h3>
-    <p th:text="'Логин покупателя: ' + ${order.getPerson().getLogin()}"></p>
-    <p th:text="'Наименование: ' + ${order.getProduct().getTitle()}"></p>
-    <p th:text="'Количество: ' + ${order.getCount()}"></p>
-    <p th:text="'Цена: ' + ${order.getPrice()}"></p>
-    <p th:text="'Дата заказа: ' + ${#temporals.format(order.getDateTime(), 'dd-MMM-yyyy')}"></p>
-    <p th:text="'Cтатус: ' + ${order.getStatus()}"></p>
-    <a th:href="@{/admin/order/edit/{id}(id=${order.getId()})}">Редактировать</a>
-    <hr>
+    <table>
+        <tr>
+            <td>Логин покупателя</td>
+            <td><p th:text="${order.getPerson().getLogin()}"></p></td>
+        </tr>
+        <tr>
+            <td>Наименование</td>
+            <td><p th:text=" ${order.getProduct().getTitle()}"></p></td>
+	 </tr>
+	<tr>
+	  <td>Количество</td>
+	  <td><p th:text="${order.getCount()}"></p></td>
+        </tr>
+        <tr>
+            <td>Цена</td>
+            <td><p th:text="${order.getPrice()}"></p></td>
+        </tr>
+        <tr>
+            <td>Дата заказа</td>
+            <td><p th:text="${#temporals.format(order.getDateTime(), 'dd-MMM-yyyy')}"></p></td>
+        </tr>
+        <tr>
+            <td>Cтатус</td>
+            <td><p th:text="${order.getStatus()}"></p></td>
+        </tr>
+    </table>
+    <a th:href="@{/admin/order/edit/{id}(id=${order.getId()})}"  class="gradient-button2">Редактировать</a>
+<hr>
 </div>
 </body>
 </html>

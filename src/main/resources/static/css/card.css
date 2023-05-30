@@ -1,0 +1,82 @@
+.cards {
+    display: grid;
+    /* Автоматически заполняем на всю ширину grid-контейнера */
+    grid-template-columns: repeat(auto-fill, 225px);
+    width: 100%;
+    max-width: 1000px; /* Ширина grid-контейнера */
+    justify-content: center;
+    justify-items: center; /* Размещаем карточку по центру */
+    column-gap: 10%; /* Отступ между колонками */
+    row-gap: 40px; /* Отступ между рядами */
+    margin: 0 auto;
+}
+* {
+    box-sizing: border-box;
+}
+.product-item {
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    border-bottom: 2px solid white;
+    background: white;
+    font-family: "Open Sans";
+    transition: .3s ease-in;
+}
+.product-item:hover {
+    border-bottom: 2px solid #22329c;
+}
+.product-item img {
+    display: block;
+    width: 100%;
+}
+.product-list{
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-family: 'Fredoka One', cursive;
+    transition: .3s ease-in-out;
+    color: #34495e;
+    line-height: 1.2;
+    position: relative;
+    padding: 0 14px;
+    text-transform: uppercase;
+    margin-top: 12px;
+}
+.product-list:after{
+    content: "";
+    height: 100%;
+    min-width: 4px;
+    background: #34495e;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: .5s;
+}
+.product-list:hover:after {
+    min-width: 100%;
+    background: #95a5a6;
+    opacity: .35;
+}
+
+.price {
+    font-size: 16px;
+    color: #fc5a5a;
+    display: block;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+.button {
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 12px;
+    background: #22329c;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 28px;
+    transition: .3s ease-in;
+}
+.product-item:hover .button {
+    background: #22329c;
+}

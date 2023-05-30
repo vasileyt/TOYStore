@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+<link href="../../static/css/index.css" th:href="@{/css/index.css}" rel="stylesheet" />
+<link href="../../static/css/button.css" th:href="@{/css/button.css}" rel="stylesheet" />
+<link href="../../static/css/card.css" th:href="@{/css/card.css}" rel="stylesheet" />
 <head>
     <meta charset="UTF-8">
     <title>Корзина</title>
 </head>
 <body>
 <h3>Корзина товаров</h3>
-<div th:each="product : ${cart_product}">
-    <img th:src="'/img/' + ${product.imageList[0].getFileName()}" width="300px">
-    <br>
-    <a th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}"></a>
-    <p th:text="'Цена: ' + ${product.getPrice()}"></p>
-    <a th:href="@{/cart/delete/{id}(id=${product.getId()})}">Удалить</a>
-    <hr>
+
+<div class="cards">
+    <div th:each="product : ${cart_product}" class="product-item" >
+        <img th:src="'/img/' + ${product.imageList[0].getFileName()}" >
+        <a th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}" class="product-list"></a>
+        <p th:text="'Цена: ' + ${product.getPrice()}" class="price"></p>
+        <a th:href="@{/cart/delete/{id}(id=${product.getId()})}" class="gradient-button1">Удалить</a>
+    </div>
 </div>
 <h3 th:text="'Итоговая цена: ' + ${price}"></h3>
-<a href="/order/create">Оформить заказ</a>
+<br>
+<a href="/order/create" class="gradient-button">Оформить заказ</a>
 <br>
 <br>
-<a href="javascript:history.back()">Назад</a>
+<a href="javascript:history.back()" class="gradient-button3">Назад</a>
 </body>
 </html>

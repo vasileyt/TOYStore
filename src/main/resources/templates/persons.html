@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+<link href="../static/css/index.css" th:href="@{/css/index.css}" rel="stylesheet" />
+<link href="../static/css/button.css" th:href="@{/css/button.css}" rel="stylesheet" />
+<link href="../static/css/table.css" th:href="@{/css/table.css}" rel="stylesheet" />
+
 <head>
     <meta charset="UTF-8">
     <title>Пользователи</title>
 </head>
 <body>
 <h3>Список пользователей</h3>
-<a href="/admin">Назад в личный кабинет</a>
+<a href="/admin" class="gradient-button3">Назад </a>
 <div th:each="person : ${persons}">
-    <br>
-    <p th:text="'Id: ' + ${person.getId()}"></p>
-    <p th:text="'Логин: ' + ${person.getLogin()}"></p>
-    <p th:text="'Пароль: ' + ${person.getPassword()}"></p>
-    <p th:text="'Роль: ' + ${person.getRole()}"></p>
-    <a th:href="@{/admin/person/edit/{id}(id=${person.getId()})}">Редактировать</a>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td><p th:text="${person.getId()}"></p></td>
+        </tr>
+        <tr>
+            <td>Логин</td>
+            <td><p th:text="${person.getLogin()}"></p></td>
+        </tr>
+        <tr>
+            <td>Пароль</td>
+            <td><p th:text="${person.getPassword()}"></p></td>
+        </tr>
+        <tr>
+            <td>Роль</td>
+            <td><p th:text="${person.getRole()}"></p></td>
+        </tr>
+    </table>
+    <a th:href="@{/admin/person/edit/{id}(id=${person.getId()})}" class="gradient-button2">Редактировать</a>
     <hr>
 </div>
 </body>

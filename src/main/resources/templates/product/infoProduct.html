@@ -1,20 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+<link href="../../static/css/index.css" th:href="@{/css/index.css}" rel="stylesheet" />
+<link href="../../static/css/button.css" th:href="@{/css/button.css}" rel="stylesheet" />
+<link href="../static/css/table.css" th:href="@{/css/table.css}" rel="stylesheet" />
+<link href="../static/css/slide.css" th:href="@{/css/slide.css}" rel="stylesheet" />
 <head>
     <meta charset="UTF-8">
     <title>Информация о товаре</title>
 </head>
 <body>
 <h3>Информация о товаре: </h3>
-<p th:text="'Наименование: ' + ${product.getTitle()}"></p>
-<p th:text="'Описание: ' + ${product.getDescription()}"></p>
-<p th:text="'Цена: ' + ${product.getPrice()}"></p>
-<p th:text="'Cклад: ' + ${product.getWarehouse()}"></p>
-<p th:text="'Продавец: ' + ${product.getSeller()}"></p>
-<p th:text="'Категория: ' + ${product.getCategory().getName()}"></p>
-<div th:each="img : ${product.getImageList()}">
-    <img th:src="'/img/' + ${img.getFileName()}">
+<div th:each="img : ${product.getImageList()}" style=" display: inline" >
+    <img th:src="'/img/' + ${img.getFileName()}"  width="250px">
 </div>
-<a href="javascript:history.back()">Назад</a>
+<table>
+    <tr>
+        <td>Наименование</td>
+        <td><p th:text="${product.getTitle()}"></p></td>
+    </tr>
+    <tr>
+        <td>Описание</td>
+        <td><p th:text="${product.getDescription()}"></p></td>
+    </tr>
+    <tr>
+        <td>Категория</td>
+        <td><p th:text="${product.getCategory().getName()}"></p></td>
+    </tr>
+    <tr>
+        <td>Цена</td>
+        <td><p th:text="${product.getPrice()}"></p></td>
+    </tr>
+    <tr>
+        <td>Cклад</td>
+        <td><p th:text="${product.getWarehouse()}"></p></td>
+    </tr>
+    <tr>
+        <td>Продавец</td>
+        <td><p th:text="${product.getSeller()}"></p></td>
+    </tr>
+</table>
+
+
+
+<a href="javascript:history.back()" class="gradient-button3">Назад</a>
 </body>
 </html>

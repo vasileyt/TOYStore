@@ -1,0 +1,48 @@
+body {
+    margin:40px;
+}
+* {
+    box-sizing: border-box;
+}
+input {
+    display:block;
+    width:100%;
+    margin:10px 0;
+    padding:10px;
+
+}
+.type {
+    border-radius:10px;
+    border: 1px solid #eee;
+    transition: .3s border-color;
+    color:#2e3750;
+    outline:none;
+}
+.type:hover {
+    border: 1px solid #97CAD0;
+    outline:none;
+}
+
+.type1 {
+    width:100%;
+    margin:10px 0;
+    height:100px;
+    border-radius:10px;
+    border: 1px solid #eee;
+    transition: .3s border-color;
+    outline:none;
+}
+.type1:hover {
+    border: 1px solid #97CAD0;
+    outline:none;
+}
+.type2 {
+    width: 100%;
+    padding:10px;
+    border-radius:10px;
+    outline:none;
+}
+.type2:hover {
+    border: 1px solid #97CAD0;
+    outline:none;
+}

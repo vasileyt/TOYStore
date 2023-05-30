@@ -1,0 +1,124 @@
+
+.gradient-button {
+    text-decoration: none;
+    display: block;
+    color: white;
+    padding: 20px 30px;
+    margin: 10px auto;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .5s;
+    border: #9EEFE1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gradient-button:hover {
+    background-position: right center;
+}
+.gradient-button1 {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    padding: 10px 10px;
+    margin: 5px 25px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #f0929a 0%, #f50707 51%, #f0929a 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .5s;
+    border: #9EEFE1;
+}
+.gradient-button1:hover {
+    background-position: right center;
+}
+.gradient-button2 {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .5s;
+    border: #9EEFE1;
+}
+.gradient-button2:hover {
+    background-position: right center;
+}
+
+
+.gradient-button3 {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    padding: 10px 15px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .5s;
+    border: #9EEFE1;
+    position: fixed;
+    bottom:0px;
+    right:0px;
+    z-index: 100;
+}
+.gradient-button3:hover {
+    background-position: right center;
+}
+.gradient-button4 {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    padding: 20px 30px;
+    margin: 10px 0;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .5s;
+    border: #9EEFE1;
+}
+.gradient-button4:hover {
+    background-position: right center;
+}
+.gradient-button5 {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    padding: 20px 30px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .5s;
+    border: #9EEFE1;
+}
+.gradient-button5:hover {
+    background-position: right center;
+}

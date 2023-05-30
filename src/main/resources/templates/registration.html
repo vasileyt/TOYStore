@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+<link href="../static/css/index.css" th:href="@{/css/index.css}" rel="stylesheet" />
+<link href="../static/css/button.css" th:href="@{/css/button.css}" rel="stylesheet" />
+<link href="../static/css/form.css" th:href="@{/css/form.css}" rel="stylesheet" />
+
 <head>
     <meta charset="UTF-8">
     <title>Регистрация</title>
 </head>
 <body>
-<h3>Регистрация</h3>
-<form method="post" th:actioin="@{/registration}" th:object="${person}">
-    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
-    <label for="login">Введите логин: </label>
+<div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+</div>
+
+<form method="post" th:actioin="@{/registration}" th:object="${person}" class="ui-form">
+    <h2>Регистрация</h2>
     <br>
-    <input type="text" th:field="*{login}" id="login">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+    <div class="form-row">
+    <label for="login">Введите логин: </label>
+    <input type="text" placeholder="Введите логин"  th:field="*{login}" id="login">
+    </div>
     <div style="color: red" th:if="${#fields.hasErrors('login')}" th:errors="*{login}"></div>
     <br>
+    <div class="form-row">
     <label for="password">Введите пароль: </label>
-    <br>
-    <input type="password" th:field="*{password}" id="password">
+    <input type="password" placeholder="Введите пароль" th:field="*{password}" id="password">
+    </div>
     <div style="color: red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+
+    <input class="gradient-button"   type="submit" value="Зарегистрироваться">
     <br>
-    <br>
-    <input type="submit" value="Зарегистрироваться">
+    <a class="gradient-button"   href="/authentication">Вход</a>
 </form>
 <br>
-<a href="/authentication">Вход</a>
+
 </body>
 </html>

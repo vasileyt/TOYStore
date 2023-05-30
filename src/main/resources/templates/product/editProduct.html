@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<link href="../../static/css/index.css" th:href="@{/css/index.css}" rel="stylesheet" />
+<link href="../../static/css/input.css" th:href="@{/css/input.css}" rel="stylesheet" />
+<link href="../../static/css/button.css" th:href="@{/css/button.css}" rel="stylesheet" />
+<link href="../../static/css/addform.css" th:href="@{/css/addform.css}" rel="stylesheet" />
+
+
 <head>
     <meta charset="UTF-8">
     <title>Редактирование товара</title>
@@ -8,42 +14,34 @@
 <h3>Редактирование товара</h3>
 <form th:method="POST" th:action="@{/admin/product/edit/{id}(id=${product.getId()})}" th:object="${product}" enctype="multipart/form-data">
     <label for="title">Введите наименование товара: </label>
-    <input type="text" th:field="*{title}" placeholder="Наименование" id="title">
+    <input type="text"  class="type" th:field="*{title}" placeholder="Наименование" id="title">
     <div style="color: red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
-    <br>
-    <br>
     <label for="description">Введите описание товара: </label>
-    <textarea th:field="*{description}" placeholder="Описание" id="description"></textarea>
+    <textarea class="type1" th:field="*{description}" placeholder="Описание" id="description"></textarea>
     <div style="color: red" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
-    <br>
-    <br>
     <label for="price">Введите цену товара: </label>
-    <input type="number" th:field="*{price}" min="1" step="0.00" placeholder="Цена" id="price">
+    <input type="number" class="type" th:field="*{price}" min="1" step="0.00" placeholder="Цена" id="price">
     <div style="color: red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div>
-    <br>
-    <br>
     <label for="warehouse">Введите cклад, на котором расположен товар: </label>
-    <input type="text" th:field="*{warehouse}" placeholder="Cклад" id="warehouse">
+    <input type="text" class="type" th:field="*{warehouse}" placeholder="Cклад" id="warehouse">
     <div style="color: red" th:if="${#fields.hasErrors('warehouse')}" th:errors="*{warehouse}"></div>
-    <br>
-    <br>
     <label for="category">Выберите категорию товара: </label>
-    <select name="category" th:field="*{category}" id="category">
+    <br>
+    <select name="category" class="type2" th:field="*{category}" id="category">
         <div th:each="element : ${category}">
             <option th:text="${element.getName()}" th:value="${element.getId()}">
         </div>
     </select>
     <div style="color: red" th:if="${#fields.hasErrors('category')}" th:errors="*{category}"></div>
     <br>
-    <br>
     <label for="seller">Введите данные о продавце: </label>
-    <textarea th:field="*{seller}" placeholder="Продавец" id="seller"></textarea>
+    <input class="type" th:field="*{seller}" placeholder="Продавец" id="seller">
     <div style="color: red" th:if="${#fields.hasErrors('seller')}" th:errors="*{seller}"></div>
     <br>
     <br>
-    <input type="submit" value="Редактировать">
+    <input type="submit" class="gradient-button" value="Редактировать">
 </form>
 <br>
-<a href="javascript:history.back()">Назад</a>
+<a href="javascript:history.back()" class="gradient-button3">Назад</a>
 </body>
 </html>

@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<link href="../../static/css/index.css" th:href="@{/css/index.css}" rel="stylesheet" />
+<link href="../../static/css/button.css" th:href="@{/css/button.css}" rel="stylesheet" />
+<link href="../static/css/table.css" th:href="@{/css/table.css}" rel="stylesheet" />
+
 <head>
     <meta charset="UTF-8">
     <title>Заказы</title>
@@ -8,14 +12,34 @@
 <h3>Заказы</h3>
 <div th:each="order : ${orders}">
     <h3 th:text="'Заказ №' + ${order.getNumber()}"></h3>
-    <img th:src="'/img/' + ${order.getProduct().getImageList()[0].getFileName()}" width="300px">
-    <p th:text="'Наименование: ' + ${order.getProduct().getTitle()}">
-    <p th:text="'Количество: ' + ${order.getCount()}">
-    <p th:text="'Цена: ' + ${order.getPrice()}">
-    <p th:text="'Дата заказа: ' + ${#temporals.format(order.getDateTime(), 'dd-MMM-yyyy')}"></p>
-    <p th:text="'Cтатус: ' + ${order.getStatus()}">
+    <div style=" display: inline">
+    <img th:src="'/img/' + ${order.getProduct().getImageList()[0].getFileName()}" width="300px" >
+    <table>
+        <tr>
+            <td>Наименование</td>
+            <td><p th:text="${order.getProduct().getTitle()}"></p></td>
+        </tr>
+        <tr>
+            <td>Количество</td>
+            <td><p th:text="${order.getCount()}"></p></td>
+        </tr>
+        <tr>
+            <td>Цена</td>
+            <td><p th:text="${order.getPrice()}"></p></td>
+        </tr>
+        <tr>
+            <td>Дата заказа</td>
+            <td><p th:text="${#temporals.format(order.getDateTime(), 'dd-MMM-yyyy')}"></p></td>
+        </tr>
+        <tr>
+            <td>Cтатус</td>
+            <td><p th:text="${order.getStatus()}"></p></td>
+        </tr>
+    </table>
+    <hr>
+</div>
 </div>
 <br>
-<a href="javascript:history.back()">Назад</a>
+<a href="javascript:history.back()" class="gradient-button3">Назад</a>
 </body>
 </html>

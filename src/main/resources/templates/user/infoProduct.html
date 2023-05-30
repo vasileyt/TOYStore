@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<link href="../../static/css/index.css" th:href="@{/css/index.css}" rel="stylesheet" />
+<link href="../../static/css/button.css" th:href="@{/css/button.css}" rel="stylesheet" />
 <head>
     <meta charset="UTF-8">
     <title>Информация о товаре</title>
@@ -12,10 +14,11 @@
 <p th:text="'Cклад: ' + ${product.getWarehouse()}"></p>
 <p th:text="'Продавец: ' + ${product.getSeller()}"></p>
 <p th:text="'Категория: ' + ${product.getCategory().getName()}"></p>
-<div th:each="img : ${product.getImageList()}">
-    <img th:src="'/img/' + ${img.getFileName()}">
+
+<div th:each="img : ${product.getImageList()}"  >
+    <img th:src="'/img/' + ${img.getFileName()}" >
 </div>
 <br>
-<a href="javascript:history.back()">Назад</a>
+<a href="javascript:history.back()" class="gradient-button3">Назад</a>
 </body>
 </html>
